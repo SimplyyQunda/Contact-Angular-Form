@@ -58,13 +58,13 @@ init ();
     return true;
 };
 
-$scope.Addcontact = function (contact) {
+$scope.Addcontacts = function (contact) {
     $http.post(SERVER_URL, contact).then(function (resp) {
       let contact = resp.data;
       $scope.contacts.push(contact);
     });
-    
-    $scope.contact = [];
+
+    // $scope.contact = [];
   };
 
 };
