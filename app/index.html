@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body ng-app="app">
+  <div class="container" ng-controller="ContactController">
+
+
+  <!-- Name input box -->
+    <form ng-submit="Addcontacts(contact)"> 
+      <label class="label">Name</label>
+        <p class="control">
+          <input class="input" type="text"
+            ng-model="contact.name"
+            ng-keyup="validateName(contact.name)"/>
+          <span class="input-error"> {{ errors.name }} </span>
+        </p>
+
+          <!-- Email input box -->
+         <form ng-submit="Addcontacts(contact)"> 
+      <label class="label">Email</label>
+        <p class="control">
+          <input class="input" type="text"
+            ng-model="contact.email"
+            ng-keyup="validateEmail(contact.email)"/>
+          <span class="input-error">{{ errors.email }}</span>
+        </p>
+
+          <!-- Website input box -->
+         <form ng-submit="Addcontacts(contact)"> 
+      <label class="label">Website</label>
+        <p class="control">
+          <input class="input" type="text"
+            ng-model="contact.website"
+            ng-keyup="validateWebsite(contact.website)"/>
+          <span class="input-error">{{ errors.website }}</span>
+        </p>
+
+          <!-- Message input box -->
+         <form ng-submit="Addcontacts(contact)"> 
+      <label class="label">Message</label>
+        <p class="control">
+          <input class="input" type="text"
+            ng-model="contact.message"
+            ng-keyup="validateMessage(contact.message)"/>
+          <span class="input-error">{{ errors.message }}</span>
+        </p>
+    <button class="button is-primary"> Submit </button>
+
+
+  <div class="myPeeps"> DaQunda's Contact </div>
+
+   <div class="box" ng-repeat = "contact in contacts">
+    <article class="media">
+      <div class="media-left">
+        <figure class="img is-64x64">
+          <img src="http://placehold.it/128x128">
+        </figure>
+      </div>
+        <div class="mediaDetails">
+          <div class="contactsDetails">
+            <p>
+              <strong>{{contact.name}}</strong> 
+              <small>{{contact.email}}</small> 
+              <small>{{contact.website}}</small>
+                <br>
+                {{contact.message}}
+            </p>
+          </div>
+
+        <nav class="border">
+          <div class="border-left">
+            <a class="border-item">
+              <span class="icon is-small"><i class="fa fa-reply"></i></span>
+            </a>
+            <a class="level-item">
+              <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+            </a>
+            <a class="level-item">
+              <span class="icon is-small"><i class="fa fa-heart"></i></span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+    </form>
+  
+    </div>
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
